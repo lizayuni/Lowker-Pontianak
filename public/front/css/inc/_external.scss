@@ -1,0 +1,251 @@
+/* -----------------------------------------
+	10. External Plugins
+----------------------------------------- */
+
+/* Jetpack Sharing */
+.sharedaddy {
+	margin-top: 30px;
+}
+
+/* WP Instagram */
+.null-instagram-feed {
+	p {
+		padding-top: 10px;
+	}
+}
+
+.widget {
+	.instagram-pics {
+		@include clearfix;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			border-bottom: 0;
+			padding: 0;
+			float: left;
+			width: 33.33333333333%;
+
+			a {
+				display: block;
+				color: $text-color;
+			}
+		}
+	}
+}
+
+/* jQuery Chosen
+===================================== */
+.chosen-container {
+	font-size: 15px;
+	max-width: 100%;
+	color: $text-color;
+
+	.chosen-single {
+		color: $text-color;
+		transition: border-color .18s ease;
+		line-height: 24px;
+		border: 2px solid $border-color;
+		border-radius: 3px;
+		padding: 6px 12px;
+		height: 42px;
+		box-shadow: none;
+		background-color: $white;
+		background-image: none;
+
+		div {
+			b {
+				background: none;
+				position: relative;
+
+				&::before {
+					font-family: FontAwesome;
+					content: '\f107';
+					position: relative;
+					top: 6px;
+
+					.ci-select & {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.chosen-drop {
+		border: 2px solid $border-color;
+		border-top: none;
+		margin-top: -2px;
+		box-shadow: 0 4px 5px rgba(0,0,0,.05);
+	}
+
+	.chosen-results {
+		li {
+			font-size: 15px;
+
+			&.highlighted {
+				background: $accent-color;
+				border-radius: 2px;
+			}
+		}
+	}
+}
+
+.chosen-container-single {
+	.chosen-search {
+		padding-left: 10px;
+		padding-right: 10px;
+		position: relative;
+		line-height: normal;
+
+		&::after {
+			font-family: FontAwesome;
+			content: '\f002';
+			position: absolute;
+			right: 20px;
+			top: 13px;
+			opacity: 0.6;
+		}
+
+		input[type="text"] {
+			height: 36px;
+			border-color: $border-color;
+			border-width: 2px;
+			border-radius: 3px;
+			background: none;
+		}
+	}
+}
+
+.chosen-container-multi {
+	.chosen-choices {
+		color: $text-color;
+		transition: border-color .18s ease;
+		line-height: 30px;
+		border: 2px solid $border-color;
+		border-radius: 3px;
+		padding: 3px 6px;
+		min-height: 42px;
+		box-shadow: none;
+		background-color: $white;
+		background-image: none;
+
+		li.search-choice {
+			font-size: 10px;
+			text-transform: uppercase;
+			padding: 6px 20px 6px 10px;
+
+			background: $border-color;
+			border: 0;
+
+			.search-choice-close {
+				top: 7px;
+			}
+		}
+	}
+}
+
+.chosen-container-active {
+	&.chosen-with-drop {
+		.chosen-single {
+			background: $white;
+			border: 2px solid $border-color;
+		}
+	}
+}
+
+/* WP Job Manager Plugin
+====================================== */
+div.job_listings {
+	margin-bottom: 0;
+}
+
+.entry-content .job_listing_preview_title .button,
+.job_listing_preview_title .button {
+	@include button-xs;
+}
+
+.single_job_listing .application .application_button {
+	@include button;
+	@include button-md;
+}
+
+.job-listing-meta {
+	margin: 0;
+	padding: 0;
+
+	li {
+		text-transform: uppercase;
+		font-size: 11px;
+		list-style: none;
+	}
+}
+
+.company_video {
+	margin-top: 20px;
+	background-color: $white;
+	padding: 5px;
+	border-bottom: 2px solid $border-color;
+	border-radius: 3px;
+}
+
+.google_map_link {
+	&::before {
+		font-family: FontAwesome;
+		content: '\f041';
+		margin-right: 5px;
+		font-size: .9em;
+		opacity: .7;
+	}
+}
+
+// Restyle jobs widget
+.widget {
+	ul.job_listings {
+		border-top: 0;
+
+		li.job_listing {
+			border-bottom-color: $border-color;
+			background-color: $white;
+			padding: 10px;
+
+			.footer & {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			&:first-child {
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+			}
+
+			&:last-child {
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
+
+			a {
+				padding: 0;
+				background: none;
+				
+				&:hover,
+				&:focus {
+					background: none;
+				}
+			}
+		}
+	}
+
+	&:not(.widget_featured_jobs) {
+		ul.job_listings {
+			li.job_listing {
+				&.job_position_featured {
+					background-color: $color-featured;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+}
